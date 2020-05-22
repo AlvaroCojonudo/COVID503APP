@@ -16,4 +16,8 @@ export class Covid19Service {
   getSummaryUS(){
     return this.http.get('https://api.covid19api.com/total/dayone/country/united%20states');
   }
+  getSummaryByCountry(country: string){
+    //console.log(`https://api.covid19api.com/total/dayone/country/${country}`);
+    return this.http.get(`https://api.covid19api.com/total/dayone/country/${country}`);
+  }
 }

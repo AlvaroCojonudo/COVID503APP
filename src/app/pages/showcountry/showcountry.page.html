@@ -1,15 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Estadisticas {{ country }}</ion-title>
+    <ion-title>Estadisticas {{ CountryName }}</ion-title>
     <ion-button slot="end" color="danger" (click)="dismiss()">
-      <ion-icon name="close-circle-outline" ></ion-icon>
+      <ion-icon name="close-circle-outline"></ion-icon>
     </ion-button>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h1>{{country}}</h1>
-  
+  <h1>{{ Date.substring(0, Date.length - 9)  }}</h1>
+  <ion-card>
+    <ion-item>
+      <ion-icon src="../../assets/icon/maps-and-flags.svg" slot="start"></ion-icon>
+      <ion-label>Casos de Covid 19</ion-label>
+    </ion-item>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          {{ CountryConfirmed }} Confirmados
+        </ion-item>
+        <ion-item>
+          {{ CountryActive }} Activos
+        </ion-item>
+        <ion-item>
+          {{ CountryRecovered }} Recuperados
+        </ion-item>
+        <ion-item>
+          {{ CountryDeaths }} Muertos
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <canvas id="myChartCountry" width="400" height="400"></canvas>
+
 
 </ion-content>

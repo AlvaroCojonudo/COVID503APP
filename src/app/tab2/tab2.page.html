@@ -20,9 +20,7 @@
       <ion-icon src="../../assets/icon/new.svg" slot="start" color="secondary"></ion-icon>
       <ion-label>Novedad</ion-label>
     </ion-item>
-
     <ion-card-content>
-      <!--<ion-button (click)="presentModal()">Abrir Modal</ion-button>-->
       <ion-list>
         <ion-item>
           <ion-label *ngIf="date">
@@ -42,6 +40,17 @@
           <ion-label>Nuevos {{ newdeaths }} Muertos</ion-label>
         </ion-item>
       </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-icon name="today-outline" slot="start" color="warning"></ion-icon>
+      <ion-label>Recuento Total</ion-label>
+    </ion-item>
+    <ion-card-content>
+
       <ion-list>
         <ion-item>
           <ion-label *ngIf="date">
@@ -105,7 +114,7 @@
           </ion-label>
         </ion-item>
         <ion-item>
-          <ion-chip>
+          <ion-chip (click)="presentModal('guatemala')">
             <ion-avatar>
               <img src="../../assets/icon/flags-gt.svg">
             </ion-avatar>
@@ -113,7 +122,7 @@
           </ion-chip>
         </ion-item>
         <ion-item>
-          <ion-chip>
+          <ion-chip (click)="presentModal('belize')">
             <ion-avatar>
               <img src="../../assets/icon/world-belize.svg">
             </ion-avatar>
@@ -121,7 +130,7 @@
           </ion-chip>
         </ion-item>
         <ion-item>
-          <ion-chip>
+          <ion-chip (click)="presentModal('honduras')">
             <ion-avatar>
               <img src="../../assets/icon/flags-honduras.svg">
             </ion-avatar>
@@ -129,73 +138,80 @@
           </ion-chip>
         </ion-item>
         <ion-item>
-          <ion-chip>
+          <ion-chip (click)="presentModal('nicaragua')">
             <ion-avatar>
               <img src="../../assets/icon/flags-nicaragua.svg">
             </ion-avatar>
             <ion-label>Nicaragua</ion-label>
           </ion-chip>
         </ion-item>
-      </ion-list>
-    </ion-card-content>
-
-  </ion-card>
-
-  <!--<ion-card>
-    <ion-item>
-      <ion-icon name="today-outline" slot="start" color="warning"></ion-icon>
-      <ion-label>Recuento Total</ion-label>
-    </ion-item>
-
-    <ion-card-content>
-      <ion-list>
         <ion-item>
-          <ion-label *ngIf="date">
-            Hasta el {{ date.substring(0, date.length - 9) }}
+          <ion-label>
+            Sur America
           </ion-label>
         </ion-item>
         <ion-item>
-          <ion-icon src="../../assets/icon/virus-solid.svg" slot="start" color="success"></ion-icon>
-          <ion-label>{{ confirmed }} Confirmados</ion-label>
+          <ion-chip (click)="presentModal('brazil')">
+            <ion-avatar>
+              <img src="../../assets/icon/brazil.svg">
+            </ion-avatar>
+            <ion-label>Brasil</ion-label>
+          </ion-chip>
         </ion-item>
         <ion-item>
-          <ion-icon name="medkit-outline" slot="start" color="secondary"></ion-icon>
-          <ion-label>{{ recovered }} Recuperados</ion-label>
+          <ion-chip (click)="presentModal('argentina')">
+            <ion-avatar>
+              <img src="../../assets/icon/argentina.svg">
+            </ion-avatar>
+            <ion-label>Argentina</ion-label>
+          </ion-chip>
         </ion-item>
         <ion-item>
-          <ion-icon name="skull-outline" color="danger" slot="start"></ion-icon>
-          <ion-label>{{ deaths }} Muertos</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>-->
-
-  <!--<ion-card *ngIf="statusUS">
-    <ion-item>
-      <ion-icon src="../../assets/icon/flag-us.svg" slot="start"></ion-icon>
-      <ion-label>Estados Unidos</ion-label>
-    </ion-item>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label *ngIf="date">
-            Hasta el {{ date.substring(0, date.length - 9) }}
+          <ion-label>
+            Europa
           </ion-label>
         </ion-item>
         <ion-item>
-          <ion-icon src="../../assets/icon/virus-solid.svg" slot="start" color="success"></ion-icon>
-          <ion-label>{{ statusUS.TotalConfirmed }} Confirmados</ion-label>
+          <ion-chip (click)="presentModal('china')">
+            <ion-avatar>
+              <img src="../../assets/icon/china.svg">
+            </ion-avatar>
+            <ion-label>China</ion-label>
+          </ion-chip>
         </ion-item>
         <ion-item>
-          <ion-icon name="medkit-outline" slot="start" color="secondary"></ion-icon>
-          <ion-label>{{ statusUS.TotalRecovered }} Recuperados</ion-label>
+          <ion-chip (click)="presentModal('italy')">
+            <ion-avatar>
+              <img src="../../assets/icon/italy.svg">
+            </ion-avatar>
+            <ion-label>Italia</ion-label>
+          </ion-chip>
         </ion-item>
         <ion-item>
-          <ion-icon name="skull-outline" color="danger" slot="start"></ion-icon>
-          <ion-label>{{ statusUS.TotalDeaths }} Muertos</ion-label>
+          <ion-chip (click)="presentModal('russia')">
+            <ion-avatar>
+              <img src="../../assets/icon/russia.svg">
+            </ion-avatar>
+            <ion-label>Rusia</ion-label>
+          </ion-chip>
+        </ion-item>
+        <ion-item>
+          <ion-chip (click)="presentModal('united kingdom')">
+            <ion-avatar>
+              <img src="../../assets/icon/england.svg">
+            </ion-avatar>
+            <ion-label>Reino Unido</ion-label>
+          </ion-chip>
+        </ion-item>
+        <ion-item>
+          <ion-chip (click)="presentModal('spain')">
+            <ion-avatar>
+              <img src="../../assets/icon/spain.svg">
+            </ion-avatar>
+            <ion-label>España</ion-label>
+          </ion-chip>
         </ion-item>
       </ion-list>
-      <canvas id="myChartUS" width="400" height="400"></canvas>
     </ion-card-content>
   </ion-card>
-</ion-content>-->
+</ion-content>
