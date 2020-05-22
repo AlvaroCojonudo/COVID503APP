@@ -30,7 +30,6 @@ export class ShowcountryPage implements OnInit {
       this.CountryActive = datos[Object.keys(datos).length - 1].Active;
       this.CountryRecovered = datos[Object.keys(datos).length - 1].Recovered;
       this.Date = new Date(datos[Object.keys(datos).length - 1].Date).toLocaleTimeString("es-SV", { year: "numeric", month: "short", day: "numeric" });
-      console.log(datos);
       let casesConfirmeds = [];
       let datesConfirmeds = [];
       let casesDeaths = [];

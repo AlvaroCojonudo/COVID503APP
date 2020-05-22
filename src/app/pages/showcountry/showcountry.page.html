@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content>
-  <h1>{{ Date.substring(0, Date.length - 9)  }}</h1>
+  <h1 *ngIf="Date">{{ Date.substring(0, Date.length - 9)  }}</h1>
   <ion-card>
     <ion-item>
       <ion-icon src="../../assets/icon/maps-and-flags.svg" slot="start"></ion-icon>
